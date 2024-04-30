@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "Nunito Sans Semi-Bold";
+    src: url('../fonts/NunitoSans_10pt-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Nunito Semi-Bold";
+    src: url();
+}
+
+body {
+    background-image: url('../images/meditation_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Nunito Sans Semi-Bold";
+}
+
+#links-container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1160px;
+    height: 34px;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1160px;
+}
+
+#hero-container {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-margin-right * {
+    margin: 0 15px;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
