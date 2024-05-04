@@ -64,3 +64,13 @@ function updateHello() {
         element.removeChild([...childElement][0]);
     })
 }
+
+function changeImage() {
+    const imgElement = document.querySelector('img');
+    if (imgElement.getAttribute('src') === './images/1.jpg') {
+        imgElement.setAttribute('src', './images/2.jpg');
+    }
+    else {
+        imgElement.setAttribute('src', './images/1.jpg');
+    }
+}
