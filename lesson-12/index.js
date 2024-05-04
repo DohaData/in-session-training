@@ -87,6 +87,6 @@ document.getElementById('update-hello').addEventListener('click', event => {
 });
 
 document.getElementById('change-cat').addEventListener('click', event => {
-    console.log(event)
+    console.log(event.target)
     changeImage();
 });
