@@ -37,12 +37,30 @@ allDivsArray.map((div) => {
         div.style.margin = '10px';
         div.style.padding = '10px';
         div.textContent = 'Cats are cute!';
-        div.innerHTML = '<p style="color:brown"> <span style="font-size: 30px">Cats</span> are cute!</h1>';
+        //div.innerHTML = '<p style="color:brown"> <span style="font-size: 30px">Cats</span> are cute!</h1>';
+        const pElement = document.createElement('p');
+        pElement.style = 'color:brown; font-size: 30px; text-align: center; background-color: black; padding: 10px; margin: 10px;';
+        pElement.textContent = 'Cats are CUTE!';
+        pElement.className = 'cat-paragraph';
+        div.appendChild(pElement);
+
+        //const pElement2 = document.getElementById('cat-paragraph');
+        //div.removeChild(pElement2);
         //div.setAttribute('style', 'background-color: blue; color: white; width: 100px; height: 100px;margin: 10px; padding: 10px;');
     }
     else {
         div.setAttribute('style', 'background-color: red; color: white; width: 100px; height: 100px;margin: 10px; padding: 10px;');
     }
+
 })
 
 console.log(allDivs);
+
+function updateHello() {
+    const parentElement = document.querySelectorAll('.mouse');
+    const parentElementArray = [...parentElement];
+    parentElementArray.map((element) => {
+        const childElement = element.getElementsByClassName('cat-paragraph');
+        element.removeChild([...childElement][0]);
+    })
+}
