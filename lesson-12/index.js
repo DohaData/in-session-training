@@ -36,11 +36,11 @@ allDivsArray.map((div) => {
         div.style.color = 'white';
         div.style.margin = '10px';
         div.style.padding = '10px';
-        div.textContent = 'Cats are cute!';
+        div.innerText = 'Cats are cute!';
         //div.innerHTML = '<p style="color:brown"> <span style="font-size: 30px">Cats</span> are cute!</h1>';
         const pElement = document.createElement('p');
         pElement.style = 'color:brown; font-size: 30px; text-align: center; background-color: black; padding: 10px; margin: 10px;';
-        pElement.textContent = 'Cats are CUTE!';
+        pElement.innerText = 'Cats are CUTE!';
         pElement.className = 'cat-paragraph';
         div.appendChild(pElement);
 
@@ -74,3 +74,19 @@ function changeImage() {
         imgElement.setAttribute('src', './images/1.jpg');
     }
 }
+
+window.addEventListener('load', (event) => {
+    console.log('page is fully loaded');
+    console.log(event);
+}
+);
+
+document.getElementById('update-hello').addEventListener('click', event => {
+    console.log(event)
+    updateHello();
+});
+
+document.getElementById('change-cat').addEventListener('click', event => {
+    console.log(event)
+    changeImage();
+});
