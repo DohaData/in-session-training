@@ -1,17 +1,36 @@
-<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>My Website</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <h1>{{title}}</h1>
     <p>This is the homepage of my website.</p>
     <p>Here is a list of some of my favorite things:</p>
-    <ul>
-        <li>{{ data.first_favorite }}</li>
-        <li>{{ data.second_favorite }}</li>
-        <li>{{ data.third_favorite }}</li>
-    </ul>
-</body>
+    {{#with data}}
+      <ul>
+        <li>{{first_favorite}}</li>
+        <li>{{second_favorite}}</li>
+        <li>{{third_favorite}}</li>
+      </ul>
+
+      {{#if showFourthFavorite}}
+        <p>And here is one more thing I like:</p>
+        <ul>
+          <li>{{fourth_favorite}}</li>
+        </ul>
+      {{else}}
+        <p>And that's it!</p>
+      {{/if}}
+
+      <p>I work from various cities:</p>
+      <ul>
+        {{#each cities}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    {{/with}}
+
+    <p>Thanks for visiting my website!</p>
+  </body>
 </html>
