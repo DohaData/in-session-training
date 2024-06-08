@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
+const axios = require("axios");
+const dotenv = require("dotenv");
 const port = 3000;
 const User = require("./models/User.model");
 const Product = require("./models/Product.model");
@@ -90,6 +92,18 @@ app.get("/filter-products", (req, res) => {
     } else {
         res.render("filter-products");
     }
+});
+
+app.get("/get-movies", (req, res) => {
+    axios.get(`www.omdbapi.com/?i=tt3896198&apikey=${process.env.OMDB_API_KEY}`)
+        .then((response) => {
+            res.send(response.data);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).send("Internal Server Error");
+        });
+
 });
 
 
