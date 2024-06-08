@@ -31,6 +31,8 @@ app.set("view engine", "hbs");
 app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(express.urlencoded({ extended: true }));
+
 hbs.registerPartials(__dirname + "/views/partials");
 
 mongoose
