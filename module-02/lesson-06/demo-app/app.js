@@ -1,9 +1,10 @@
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
 const axios = require("axios");
-const dotenv = require("dotenv");
 const port = 3000;
 const User = require("./models/User.model");
 const Product = require("./models/Product.model");
