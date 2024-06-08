@@ -1,0 +1,11 @@
+<h1>Welcome to My Website</h1>
+<p>This is the homepage of my website.</p>
+
+<ul>
+    {{#each products}}
+        <li> <a href="/products/{{_id}}">{{name}}</a></li>
+    {{/each}}
+</ul>
+
+<a href="/products">Create a new product</a>
+<a href="/filter-products"> Filter products</a>
