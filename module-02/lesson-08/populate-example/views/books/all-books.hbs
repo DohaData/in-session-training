@@ -1,0 +1,16 @@
+<h1>All available books</h1>
+{{#each books}}
+  <a href="/books/book-details/{{_id}}">
+    <div class="book-card">
+      <h2>
+        {{title}}
+        -
+        {{description}}
+        - All the cast:
+        {{#each cast}} {{name}} {{/each}}</h2>
+
+    </div>
+    <a href="/books/update-book/{{_id}}">
+      <button>Edit</button></a>
+  </a>
+{{/each}}
