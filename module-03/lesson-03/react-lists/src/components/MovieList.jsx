@@ -11,9 +11,10 @@ function MovieList() {
     };
     return (
         <div>
-            {movies.map((movie) => (
-              <MovieCard key={movie._id} movie={movie} updateMovie={updateMovie}/>
-            ))}
+            {movies.map((movie, index) => {
+              return <MovieCard key={index} movie={movie} updateMovie={updateMovie}/>
+            }
+            )}
         </div>
     );
 }
